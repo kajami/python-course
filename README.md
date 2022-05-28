@@ -5,11 +5,11 @@ Simple CRUD-app. Built with Django.
 
 Book collection with user registration and user login. You can create user, login and add books with images to a database. 
 
-**Login
+**Login**
 <img src="https://pythonweppipalvelu.files.wordpress.com/2022/05/image-34.png">
 
 
-**Register
+**Register**
 <img src="https://pythonweppipalvelu.files.wordpress.com/2022/05/image-27.png">
 
 
