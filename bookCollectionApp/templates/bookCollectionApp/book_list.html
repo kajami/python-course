@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book collection</title>
+    <style>
+      ul {
+        list-style: none;
+      }
+      a {
+        font-weight: bold;
+        text-decoration: none;
+        color: black;
+      }
+      #deleteBtn {
+        background-color: red;
+        color: black;
+      }
+
+      #deleteBtn:hover {
+        transition-duration: 0.4s;
+        background-color: darkred;
+      }
+
+      #updateBtn {
+        background-color: lightseagreen;
+        color: black;
+      }
+
+      #updateBtn:hover {
+        transition-duration: 0.4s;
+        background-color: rgb(15, 109, 104);
+      }
+       a:visited {
+        color: rgb(5, 5, 44);
+      }
+
+      a:hover {
+        transition-duration: 0.4s;
+        color: rgb(124, 111, 119);
+      }
+    </style>
+  </head>
+  {% extends "bookCollectionApp/base.html" %}
+  {% block content %}
+    <body>
+      {% if messages %}
+        {% for message in messages %}
+          <p style="color: green; font-weight: bold;">{{ message }}</p>
+        {% endfor %}
+      {% endif %}
+      
+      <h1>Book collection</h1>
+      {% if object_list %}
+        {% for object in object_list %}
+          <ul>
+            <li>
+              <a href="{{ object.get_absolute_url }}"> {{ object.name }},<br>Written by {{ object.author }} </a><br><br>
+              {% if object.image %}
+                <a href="{{ object.get_absolute_url }}">
+                  <img src="{{ object.image.url }}" alt="" width="200" height="250"><br>
+                </a>
+              {% endif%}
+              <a id="updateBtn" href="{{ object.update_object }}"> Update</a>
+              <a id="deleteBtn" href="{{ object.delete_object }}"> Delete</a>
+            </li>
+          </ul>
+        {% endfor %}
+      {% else %}
+        <p style="color: rgb(3, 78, 66); font-weight: bold;">No books yet.</p>
+      {% endif%}
+    </body>
+  {% endblock content %}
+</html>
+
+

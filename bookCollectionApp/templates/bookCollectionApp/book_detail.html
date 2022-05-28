@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book details</title>
+</head>
+{% extends "bookCollectionApp/base.html" %}
+{% block content %}
+    <body>
+        <p>{{ object.name }}<br>by {{ object.author }}<br>published in {{ object.year }}</p>
+        <p>Added by user {{ object.username }}<br>{{ object.addingDate }}</p>
+        {% if object.image %}
+            <img src="{{ object.image.url }}" alt="" width="200" height="250"><br>
+        {% endif%}
+    </body>
+{% endblock content %}
+</html>

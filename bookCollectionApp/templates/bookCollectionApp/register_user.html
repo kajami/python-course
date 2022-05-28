@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books Login</title>
+</head>
+<body>
+
+    {% if form.errors %}
+        <p style="color: red; font-weight: bold;">There was an error with your form. <br> Please check below for more information.</p>
+    {% endif %}
+    <p>{{ address }}</p>
+
+    <h1>Register</h1>
+    <form action="{% url 'register' %}" method="post"> 
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br><br><input type="submit" value="Submit"> 
+    </form>
+
+</body>
+</html>

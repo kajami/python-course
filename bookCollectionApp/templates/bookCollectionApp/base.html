@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Base HTML</title>
+    <style>
+      #nav {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 350px;
+        background-color: lightseagreen;
+        font-weight: bold;
+      }
+      .navitem a {
+        display: block;
+        color: #000;
+        padding: 8px 16px;
+        text-decoration: none;
+      }
+      .navitem a:hover {
+        background-color: #555;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="nav">
+      <li class="navitem"><a href="/books/">Home</a></li>
+      <li class="navitem"><a href="book/create">Add new book</a></li>
+      <li class="navitem"><a href="{% url 'logout' %}">Logout</a></li>
+    </ul>
+    {% block content %} {% endblock content %}
+  </body>
+</html>
