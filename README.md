@@ -3,7 +3,7 @@ Python course 2022
 
 Simple CRUD-app. Built with Django. 
 
-Book collection with user registration and user login. After you create a user and login, you can add, edit and delete books with images to a database. 
+Book collection with user registration and user login. After you create a user and login, you can add, edit and delete books with images. 
 <br>
 <br>
 
